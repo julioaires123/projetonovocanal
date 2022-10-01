@@ -1,9 +1,6 @@
 //horário de Brasília////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 setInterval(function relog() {
-
     let rel = document.getElementById('relogio01')
     let data = new Date();
     let h = data.getHours();
@@ -27,7 +24,7 @@ setInterval(function relog() {
         h = h + 1;
     }
 
-
+    
     if (h === 24) {
 
         h = 00;
@@ -179,11 +176,7 @@ setInterval(function relog() {
         s = `0${s}`
     }
 
-
     rel.innerHTML = `${h}:${m}:${s}`
-
-
-
 
 
 }, 1000)
@@ -775,35 +768,44 @@ setInterval(function relog4() {
         s = `0${s}`
     }
 
-
-
     rel.innerHTML = `${h}:${m}:${s}`
 
-
-
-
-
-
-
+    document.getElementById("relogio4").innerHTML = fullDate;
 
 }, 1000)
 
 //Dia mês e ano /////////////////////////////////////////////////////////////////////////////////////////////
-
-let meses = new Array("Dezembro", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Julho", "Agosto", "Setembro", "Outubro", "Novembro")
-let semanas = new Array("Segunda-Feira", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado")
-
-
-
-
-let rel = document.getElementById('date')
-let data = new Date();
-let diasem = data.getDay();
-let dia = data.getDate();
-let mes = data.getMonth();
-let ano = data.getFullYear();
+let dia, mes, ano;
+let clock = function() {
+    let meses = new Array("Dezembro", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Julho", "Agosto", "Setembro", "Outubro", "Novembro")
+    let semanas = new Array("Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado")
 
 
 
 
-document.write(semanas[diasem] + ", " + dia + " de " + meses[mes] + " de " + ano);
+    let rel = document.getElementById('date')
+    let data = new Date();
+    let diasem = data.getDay();
+    let dia = data.getDate();
+    let mes = data.getMonth();
+    let ano = data.getFullYear();
+
+
+
+
+    document.write(semanas[diasem] + ", " + dia + " de " + meses[mes] + " de " + ano);
+    let fulldate = day[date.getDay()] + ', ' + date.getDate();
+
+    document.getElementById("date").innerHTML = fullDate;
+
+}
+clock();
+
+setInterval(function clock() {
+
+
+    clock();
+
+
+
+}, 1000);
