@@ -51,7 +51,7 @@
         // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////
             rel.innerHTML = `${h}:${m}:${s}`
         
-        }, 1000)
+        })
 
     //horário de Fernando de Noronha////////////////////////////////////////////////////////////////////////
     
