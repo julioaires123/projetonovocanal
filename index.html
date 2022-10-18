@@ -1,56 +1,90 @@
-<!DOCTYPE html>
-<html lang="pr-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="10">
-
-    <link rel="stylesheet" href="style.css">
-
-    <title>CANAL Sr. VAQUINHA</title>
-</head>
-<h1>HORÁRIO DE BRASÍLIA</h1>
-
-<Body>
-
-    <Div>
-
-        <section onload="relog">
-            <p id="relogio01"></p>
-
-
-            <script src="script.js"></script>
-        </section>
-
-
-        <section onload="relog1">
-            <p class="date"></p>
-            <script src="script.js"></script>
-        </section>
-
-
-        <section onload="relog2">
-            <p class="fn">FERNANDO DE NORONHA</p>
-            <div id="relogio2"></div>
-            <script src="script.js"></script>
-        </section>
-
-
-        <section onload="relog3">
-
-            <p class="am">AMAZONAS</p>
-            <div id="relogio3"></div>
-            <script src="script.js"></script>
-        </section>
-
-        <section onload="relog4">
-            <p class="ac">ACRE</p>
-            <div id="relogio4"></div>
-            <script src="script.js"></script>
-        </section>
-    </Div>
-</Body>
-
-</html>
+//horário de Brasília////////////////////////////////////////////////////////////////////////////////////////
+        setInterval(function relog() {
+        let rel = document.getElementById('relogio01')
+        let data = new Date();
+        data.setSeconds(data.getSeconds() +30);
+        let h = data.getHours();
+        let m = data.getMinutes();
+        let s = data.getSeconds();
+          if (h < 10) {// coloca um zero antes dos números abaixo de dez: ex: 1: 1: 1 depois ex 01:01:01////////////////////
+           h = `0${h}`
+        }
+        if (m < 10) {
+           m = `0${m}`
+        }  
+        if (s < 10) {
+           s = `0${s}`
+        }
+        // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////
+            rel.innerHTML = `${h}:${m}:${s}`
+        })
+    //horário de Fernando de Noronha////////////////////////////////////////////////////////////////////////  
+    setInterval(function relog2() {
+        let rel = document.getElementById('relogio2')
+        let data = new Date();
+        data.setSeconds(data.getSeconds() +30);
+        data.setHours(data.getHours() +1);
+        let h = data.getHours() ; 
+        let m = data.getMinutes();
+        let s = data.getSeconds() 
+           if (h < 10) {  // coloca um zero antes dos números abaixo de dez: ex: 1: 1: 1 depois ex 01:01:01////////////////////
+              h = `0${h}`
+           } 
+           if (m < 10) {
+              m = `0${m}`
+           }
+           if (s < 10) {
+              s = `0${s}`
+           }
+           // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////
+               rel.innerHTML = `${h}:${m}:${s}`
+           })
+    //horário de Amazonas///////////////////////////////////////////////////////////////////////////////////   
+    setInterval(function relog3() {
+        let rel = document.getElementById('relogio3');
+        let data = new Date();
+        data.setSeconds(data.getSeconds() +30);
+        data.setHours(data.getHours() -1);
+        let h = data.getHours() ;
+        let m = data.getMinutes();
+        let s = data.getSeconds(); 
+          if (h < 10) {  // coloca um zero antes dos números abaixo de dez: ex: 1: 1: 1 depois ex 01:01:01////////////////////
+           h = `0${h}`
+        }
+        if (m < 10) {
+           m = `0${m}`
+        }
+        if (s < 10) {
+           s = `0${s}`
+        }
+            rel.innerHTML = `${h}:${m}:${s}`   // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////
+           })
+    //horário de Acre////////////////////////////////////////////////////////////////////////////////////
+    setInterval(function relog4() {
+        let rel = document.getElementById('relogio4')
+        let data = new Date();
+        data.setSeconds(data.getSeconds() +30);
+        data.setHours(data.getHours() -2);
+        let h = data.getHours();
+        let m = data.getMinutes();
+        let s = data.getSeconds() ;  
+          if (h < 10) { // coloca um zero antes dos números abaixo de dez: ex: 1: 1: 1 depois ex 01:01:01////////////////////
+           h = `0${h}`
+        }
+        if (m < 10) {
+           m = `0${m}`
+        } 
+        if (s < 10) {
+           s = `0${s}`
+        }
+            rel.innerHTML = `${h}:${m}:${s}`  // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////       
+           })   
+//Dia mês e ano /////////////////////////////////////////////////////////////////////////////////////////////
+let meses = new Array("Dezembro", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Julho", "Agosto", "Setembro", "Outubro", "Novembro");
+    let semanas = new Array("Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado");
+    let data = new Date();
+    let diasem = data.getDay();
+    let dia = data.getDate();
+    let mes = data.getMonth();
+    let ano = data.getFullYear();
+    document.write(semanas[diasem] + ", " + dia + " de " + meses[mes] + " de " + ano);
