@@ -104,5 +104,10 @@ function exibirDataAtualizada() {
 // Chama a função para exibir a data atualizada
 exibirDataAtualizada();
 
-// Atualiza a data a cada segundo
-setInterval(exibirDataAtualizada, 1000);
+// Atualiza a data à meia-noite
+setInterval(function() {
+    let data = new Date();
+    if (data.getHours() === 00 && data.getMinutes() === 00 && data.getSeconds() === 00) {
+        exibirDataAtualizada();
+    }
+}, 1000);
