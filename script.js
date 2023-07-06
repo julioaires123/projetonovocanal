@@ -105,12 +105,12 @@ function exibirDataAtualizada() {
 function incrementarDia() {
   let data = new Date();
   data.setDate(data.getDate() + 1);
+  exibirDataAtualizada();
 }
 
 // Função para atualizar a data a cada 5 segundos
 function atualizarData() {
   incrementarDia();
-  exibirDataAtualizada();
   setTimeout(atualizarData, 5000); // Chama a função novamente após 5 segundos
 }
 
@@ -118,5 +118,5 @@ function atualizarData() {
 exibirDataAtualizada();
 
 // Inicia a atualização da data a cada 5 segundos
-atualizarData();
+setTimeout(atualizarData, 5000);
 
