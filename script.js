@@ -101,17 +101,22 @@ function exibirDataAtualizada() {
   document.getElementById("date").innerHTML = semanas[diasem] + ", " + dia + " de " + meses[mes] + " de " + ano;
 }
 
-// Função para incrementar um dia a cada 5 segundos
+// Função para incrementar um dia
 function incrementarDia() {
   let data = new Date();
   data.setDate(data.getDate() + 1);
+}
+
+// Função para atualizar a data a cada 5 segundos
+function atualizarData() {
+  incrementarDia();
   exibirDataAtualizada();
+  setTimeout(atualizarData, 5000); // Chama a função novamente após 5 segundos
 }
 
 // Chama a função para exibir a data atualizada
 exibirDataAtualizada();
 
-// Inicia o incremento do dia a cada 5 segundos
-setInterval(incrementarDia, 5000);
-
+// Inicia a atualização da data a cada 5 segundos
+atualizarData();
 
