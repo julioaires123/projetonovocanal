@@ -83,12 +83,10 @@
 // Função para exibir a data atualizada
 function exibirDataAtualizada() {
     let meses = [
-        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
     ];
     let semanas = [
-        "Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira",
-        "Quinta-Feira", "Sexta-Feira", "Sábado"
+        "Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira","Quinta-Feira", "Sexta-Feira", "Sábado"
     ];
 
     let data = new Date();
@@ -105,9 +103,9 @@ function exibirDataAtualizada() {
 exibirDataAtualizada();
 
 // Atualiza a data à meia-noite
-setInterval(function() {
-    let data = new Date();
-    if (data.getHours() === 00 && data.getMinutes() === 00 && data.getSeconds() === 00) {
-        exibirDataAtualizada();
+// setInterval(function() {
+//    let data = new Date();
+//    if (data.getHours() === 00 && data.getMinutes() === 00 && data.getSeconds() === 00) {
+  //      exibirDataAtualizada();
     }
 }, 1000);
