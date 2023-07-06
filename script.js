@@ -100,7 +100,7 @@ function exibirDataAtualizada() {
   // Verifica se é meia-noite (00:00:00)
   if (data.getHours() === 0 && data.getMinutes() === 0 && data.getSeconds() === 0) {
     // Incrementa um dia
-    data.setDate(data.getDate() + 1);
+    data.setDate(data.getDate() + 0);
     dia = data.getDate();
     mes = data.getMonth();
     ano = data.getFullYear();
@@ -123,8 +123,7 @@ function atualizarData() {
 
     // Define o próximo intervalo de atualização para o próximo dia
     let proximaAtualizacao = new Date();
-    proximaAtualizacao.setDate(proximaAtualizacao.getDate() + 0);
-    proximaAtualizacao.setSeconds(proximaAtualizacao.getSeconds() + 20);      
+    proximaAtualizacao.setDate(proximaAtualizacao.getDate() + 0);     
     proximaAtualizacao.setHours(0);
     proximaAtualizacao.setMinutes(0);
     proximaAtualizacao.setSeconds(0);
