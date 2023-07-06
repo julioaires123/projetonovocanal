@@ -110,13 +110,12 @@ function incrementarDia() {
 
 // Função para atualizar a data a cada 5 segundos
 function atualizarData() {
-  incrementarDia();
-  setTimeout(atualizarData, 5000); // Chama a função novamente após 5 segundos
+  setInterval(incrementarDia, 5000); // Chama a função incrementarDia a cada 5 segundos
 }
 
 // Chama a função para exibir a data atualizada
 exibirDataAtualizada();
 
 // Inicia a atualização da data a cada 5 segundos
-setTimeout(atualizarData, 5000);
+atualizarData();
 
