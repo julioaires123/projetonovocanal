@@ -80,32 +80,35 @@
             rel.innerHTML = `${h}:${m}:${s}`  // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////       
            })   
 //Dia mês e ano /////////////////////////////////////////////////////////////////////////////////////////////
-// Função para exibir a data atualizada
-function exibirDataAtualizada() {
-    let meses = [
-        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-    ];
-    let semanas = [
-        "Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira","Quinta-Feira", "Sexta-Feira", "Sábado"
-    ];
+// Função para atualizar a data a cada segundo
+function atualizarData() {
+  let data = new Date();
+  let horas = data.getHours();
+  let minutos = data.getMinutes();
+  let segundos = data.getSeconds();
 
-    let data = new Date();
-    let diasem = data.getDay();
-    let dia = data.getDate();
-    let mes = data.getMonth();
-    let ano = data.getFullYear();
+  // Verifica se é meia-noite (00:00:00)
+  if (horas === 0 && minutos === 0 && segundos === 0) {
+    exibirDataAtualizada();
 
-    // Atualiza o conteúdo do elemento com o ID "date"
-    document.getElementById("date").innerHTML = semanas[diasem] + ", " + dia + " de " + meses[mes] + " de " + ano;
+    // Define o próximo intervalo de atualização para o próximo dia
+    let proximaAtualizacao = new Date();
+    proximaAtualizacao.setDate(proximaAtualizacao.getDate() + 0);
+    proximaAtualizacao.setSeconds(proximaAtualizacao.getSeconds() + 20);      
+    proximaAtualizacao.setHours(0);
+    proximaAtualizacao.setMinutes(0);
+    proximaAtualizacao.setSeconds(0);
+
+    let tempoAteProximaAtualizacao = proximaAtualizacao.getTime() - data.getTime();
+
+    setTimeout(atualizarData, tempoAteProximaAtualizacao);
+  } else {
+    setTimeout(atualizarData, 1000); // Chama a função novamente após 1 segundo
+  }
 }
 
 // Chama a função para exibir a data atualizada
 exibirDataAtualizada();
 
- Atualiza a data à meia-noite
- setInterval(function() {
-   let data = new Date();
-    if (data.getHours() === 00 && data.getMinutes() === 00 && data.getSeconds() === 00) {
-        exibirDataAtualizada();
-    }
-}, 1000);
+// Atualiza a data a cada segundo
+atualizarData();
