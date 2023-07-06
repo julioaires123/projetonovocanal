@@ -97,8 +97,8 @@ function exibirDataAtualizada() {
   let mes = data.getMonth();
   let ano = data.getFullYear();
 
-  // Verifica se a hora atual é maior ou igual a 00:00:00
-  if (data.getHours() >= 0 && data.getMinutes() === 0 && data.getSeconds() === 0) {
+  // Verifica se é meia-noite (00:00:00)
+  if (data.getHours() === 0 && data.getMinutes() === 0 && data.getSeconds() === 0) {
     // Incrementa um dia
     data.setDate(data.getDate() + 1);
     dia = data.getDate();
@@ -118,15 +118,16 @@ function exibirDataAtualizada() {
   document.getElementById("date").innerHTML = semanas[diasem] + ", " + dia + " de " + meses[mes] + " de " + ano;
 }
 
-// Função para atualizar a data a cada segundo
-function atualizarData() {
-  exibirDataAtualizada();
-  setTimeout(atualizarData, 1000); // Chama a função novamente após 1 segundo
+// Função para incrementar um dia a cada 5 segundos
+function incrementarDia() {
+  let data = new Date();
+  data.setDate(data.getDate() + 1);
+  setTimeout(incrementarDia, 5000); // Chama a função novamente após 5 segundos
 }
 
 // Chama a função para exibir a data atualizada
 exibirDataAtualizada();
 
-// Atualiza a data a cada segundo
-atualizarData();
+// Inicia o incremento do dia a cada 5 segundos
+setTimeout(incrementarDia, 5000);
 
