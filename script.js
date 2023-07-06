@@ -1,8 +1,8 @@
 // Função para obter a hora da internet
-function obterHoraInternet() {
+function obterHoraInternet(timezone) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://worldtimeapi.org/api/timezone/America/Sao_Paulo');
+    xhr.open('GET', `https://worldtimeapi.org/api/timezone/${timezone}`);
     xhr.onload = () => {
       if (xhr.status === 200) {
         const response = JSON.parse(xhr.responseText);
@@ -19,10 +19,10 @@ function obterHoraInternet() {
   });
 }
 
-// Função para exibir a hora de Brasília
-function exibirHoraBrasilia() {
-  let rel = document.getElementById('relogio01');
-  obterHoraInternet().then((dateTime) => {
+// Função para exibir a hora de uma região específica
+function exibirHora(regiao, timezone, elementId) {
+  let rel = document.getElementById(elementId);
+  obterHoraInternet(timezone).then((dateTime) => {
     let h = dateTime.getHours();
     let m = dateTime.getMinutes();
     let s = dateTime.getSeconds();
@@ -37,7 +37,7 @@ function exibirHoraBrasilia() {
       s = `0${s}`;
     }
 
-    rel.innerHTML = `${h}:${m}:${s}`;
+    rel.innerHTML = `${regiao}: ${h}:${m}:${s}`;
   }).catch((error) => {
     console.error(error);
   });
@@ -81,11 +81,19 @@ function atualizarData() {
   }
 }
 
-// Chama a função para exibir a hora de Brasília
-exibirHoraBrasilia();
+// Chama as funções para exibir os horários das diferentes regiões do Brasil
+exibirHora("Brasília", "America/Sao_Paulo", "relogio01");
+exibirHora("Fernando de Noronha", "America/Noronha", "relogio2");
+exibirHora("Amazonas", "America/Manaus", "relogio3");
+exibirHora("Acre", "America/Rio_Branco", "relogio4");
 
-// Atualiza a hora de Brasília a cada segundo
-setInterval(exibirHoraBrasilia, 1000);
+// Atualiza os horários das regiões a cada segundo
+setInterval(() => {
+  exibirHora("Brasília", "America/Sao_Paulo", "relogio01");
+  exibirHora("Fernando de Noronha", "America/Noronha", "relogio2");
+  exibirHora("Amazonas", "America/Manaus", "relogio3");
+  exibirHora("Acre", "America/Rio_Branco", "relogio4");
+}, 1000);
 
 // Chama a função para exibir a data atualizada
 exibirDataAtualizada();
