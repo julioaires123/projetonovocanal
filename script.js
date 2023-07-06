@@ -91,22 +91,17 @@ function exibirDataAtualizada() {
     "Quinta-Feira", "Sexta-Feira", "Sábado"
   ];
 
-  let data = new Date();
+  let data = new Date();  // Obtém a data e hora atual do sistema
+  data.setHours(0, 0, 20);  // Define a hora fixa para 00:00:20
+
   let diasem = data.getDay();
   let dia = data.getDate();
   let mes = data.getMonth();
   let ano = data.getFullYear();
 
-  // Verifica se é meia-noite (00:00:00)
-  if (data.getHours() === 0 && data.getMinutes() === 0 && data.getSeconds() === 0) {
-    // Incrementa um dia
-    data.setDate(data.getDate();
-    dia = data.getDate();
-    mes = data.getMonth();
-    ano = data.getFullYear();
-  }
-
   // Atualiza o conteúdo do elemento com o ID "date"
   document.getElementById("date").innerHTML = semanas[diasem] + ", " + dia + " de " + meses[mes] + " de " + ano;
 }
 
+// Chama a função para exibir a data atualizada
+exibirDataAtualizada();
