@@ -2,7 +2,7 @@
         setInterval(function relog() {
         let rel = document.getElementById('relogio01')
         let data = new Date();
-        data.setSeconds(data.getSeconds() +20);
+        data.setSeconds(data.getSeconds() +00);
         let h = data.getHours();
         let m = data.getMinutes();
         let s = data.getSeconds();
@@ -22,7 +22,7 @@
     setInterval(function relog2() {
         let rel = document.getElementById('relogio2')
         let data = new Date();
-        data.setSeconds(data.getSeconds() +20);
+        data.setSeconds(data.getSeconds() +00);
         data.setHours(data.getHours() +1);
         let h = data.getHours() ; 
         let m = data.getMinutes();
@@ -43,7 +43,7 @@
     setInterval(function relog3() {
         let rel = document.getElementById('relogio3');
         let data = new Date();
-        data.setSeconds(data.getSeconds() +20);
+        data.setSeconds(data.getSeconds() +00);
         data.setHours(data.getHours() -1);
         let h = data.getHours() ;
         let m = data.getMinutes();
@@ -63,7 +63,7 @@
     setInterval(function relog4() {
         let rel = document.getElementById('relogio4')
         let data = new Date();
-        data.setSeconds(data.getSeconds() +20);
+        data.setSeconds(data.getSeconds() +00);
         data.setHours(data.getHours() -2);
         let h = data.getHours();
         let m = data.getMinutes();
@@ -83,13 +83,9 @@
 // Função para exibir a data atualizada
 function exibirDataAtualizada() {
   let meses = [
-    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-  ];
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
   let semanas = [
-    "Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira",
-    "Quinta-Feira", "Sexta-Feira", "Sábado"
-  ];
+    "Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
 
   let data = new Date();
   let diasem = data.getDay();
@@ -100,7 +96,7 @@ function exibirDataAtualizada() {
   // Verifica se é meia-noite (00:00:00)
   if (data.getHours() === 0 && data.getMinutes() === 0 && data.getSeconds() === 0) {
     // Incrementa um dia
-    data.setDate(data.getDate() + 1);
+    data.setDate(data.getDate();
     dia = data.getDate();
     mes = data.getMonth();
     ano = data.getFullYear();
@@ -123,8 +119,8 @@ function atualizarData() {
 
     // Define o próximo intervalo de atualização para o próximo dia
     let proximaAtualizacao = new Date();
-    proximaAtualizacao.setDate(proximaAtualizacao.getDate() + 0);
-    proximaAtualizacao.setSeconds(proximaAtualizacao.getSeconds() + 20);      
+    proximaAtualizacao.setDate(proximaAtualizacao.getDate();
+    proximaAtualizacao.setSeconds(proximaAtualizacao.getSeconds();      
     proximaAtualizacao.setHours(0);
     proximaAtualizacao.setMinutes(0);
     proximaAtualizacao.setSeconds(0);
