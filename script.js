@@ -80,6 +80,36 @@
             rel.innerHTML = `${h}:${m}:${s}`  // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////       
            })   
 //Dia mês e ano /////////////////////////////////////////////////////////////////////////////////////////////
+// Função para exibir a data atualizada
+function exibirDataAtualizada() {
+  let meses = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+  ];
+  let semanas = [
+    "Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira",
+    "Quinta-Feira", "Sexta-Feira", "Sábado"
+  ];
+
+  let data = new Date();
+  let diasem = data.getDay();
+  let dia = data.getDate();
+  let mes = data.getMonth();
+  let ano = data.getFullYear();
+
+  // Verifica se é meia-noite (00:00:00)
+  if (data.getHours() === 0 && data.getMinutes() === 0 && data.getSeconds() === 0) {
+    // Incrementa um dia
+    data.setDate(data.getDate() + 1);
+    dia = data.getDate();
+    mes = data.getMonth();
+    ano = data.getFullYear();
+  }
+
+  // Atualiza o conteúdo do elemento com o ID "date"
+  document.getElementById("date").innerHTML = semanas[diasem] + ", " + dia + " de " + meses[mes] + " de " + ano;
+}
+
 // Função para atualizar a data a cada segundo
 function atualizarData() {
   let data = new Date();
