@@ -36,7 +36,7 @@ p#relogio01 {
 }
 
 
-/*horário do fernando de noronha*/
+/*horário do Acre*/
 
 #relogio2 {
     position: fixed;
@@ -50,7 +50,7 @@ p#relogio01 {
 p.fn {
     position: fixed;
     top: 78%;
-    right: 76%;
+    right: 90%;
     justify-content: space-around;
     font-size: 1.6rem;
     color: #0044ff;
@@ -81,7 +81,7 @@ p.am {
 }
 
 
-/*horário do acre*/
+/*horário de Fernando de Noronha*/
 
 #relogio4 {
     position: fixed;
