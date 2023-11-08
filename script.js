@@ -18,12 +18,12 @@
         // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////
             rel.innerHTML = `${h}:${m}:${s}`
         })
-    //horário de Fernando de Noronha////////////////////////////////////////////////////////////////////////  
+    //ACRE////////////////////////////////////////////////////////////////////////  
     setInterval(function relog2() {
         let rel = document.getElementById('relogio2')
         let data = new Date();
         data.setSeconds(data.getSeconds() +00);
-        data.setHours(data.getHours() +1);
+        data.setHours(data.getHours() -2);
         let h = data.getHours() ; 
         let m = data.getMinutes();
         let s = data.getSeconds() 
@@ -59,12 +59,12 @@
         }
             rel.innerHTML = `${h}:${m}:${s}`   // Mostra a hora minutos e segundos na página /////////////////////////////////////////////////////
            })
-    //horário de Acre////////////////////////////////////////////////////////////////////////////////////
+    //horário de Fernando de Noronha////////////////////////////////////////////////////////////////////////////////////
     setInterval(function relog4() {
         let rel = document.getElementById('relogio4')
         let data = new Date();
         data.setSeconds(data.getSeconds() + 00);
-        data.setHours(data.getHours() -2);
+        data.setHours(data.getHours() +1);
         let h = data.getHours();
         let m = data.getMinutes();
         let s = data.getSeconds() ;  
