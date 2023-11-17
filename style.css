@@ -25,9 +25,10 @@ h1 {
     font-family: 'arial';
 }
 
+
 p#relogio01 {
     position: fixed;
-    right: -0.7%;
+    right: -0.15%;
     top: 2%;
     text-align: center;
     font-size: 24.3rem;
@@ -36,7 +37,7 @@ p#relogio01 {
 }
 
 
-/*horário do Acre*/
+/*horário do fernando de noronha*/
 
 #relogio2 {
     position: fixed;
@@ -50,7 +51,7 @@ p#relogio01 {
 p.fn {
     position: fixed;
     top: 78%;
-    right: 85%;
+    right: 76%;
     justify-content: space-around;
     font-size: 1.6rem;
     color: #0044ff;
@@ -81,7 +82,8 @@ p.am {
 }
 
 
-/*horário de Fernando de Noronha*/
+
+/*horário do acre*/
 
 #relogio4 {
     position: fixed;
@@ -95,7 +97,7 @@ p.am {
 p.ac {
     position: fixed;
     top: 78%;
-    right: 1%;
+    right: 10%;
     justify-content: space-around;
     font-size: 1.6rem;
     color: #0044ff;
@@ -115,6 +117,25 @@ section {
     text-align: center;
     padding-top: 125px; /* Ou outro valor adequado */
     font-size: 4.8rem;
+    color: #0044ff;
+    font-family: 'arial';
+}
+
+p.sr {
+    position: fixed;
+    top: 95%;
+    right: 43.8%;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    color: #0044ff;
+    font-family: 'arial';
+}
+a.sr {
+    position: fixed;
+    top: 95%;
+    right: 43.8%;
+    justify-content: space-around;
+    font-size: 1.6rem;
     color: #0044ff;
     font-family: 'arial';
 }
