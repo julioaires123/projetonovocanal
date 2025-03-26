@@ -4,7 +4,7 @@ function atualizarRelogio(id, offset) {
         let rel = document.getElementById(id);
         let data = new Date();
         data.setUTCHours(data.getUTCHours() - 0 + offset); // UTC-3 para Brasília como referência
-        data.setSeconds(data.getSeconds() + 19); // Adiciona 19 segundos
+        data.setSeconds(data.getSeconds() + 24); // Adiciona 19 segundos
         let h = data.getHours();
         let m = data.getMinutes();
         let s = data.getSeconds();
@@ -29,7 +29,7 @@ function exibirDataAtualizada() {
     let semanas = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
     
     let data = new Date();
-    data.setSeconds(data.getSeconds() + 19); // Ajuste de segundos
+    data.setSeconds(data.getSeconds() + 24); // Ajuste de segundos
     let diasem = data.getDay();
     let dia = data.getDate();
     let mes = data.getMonth();
@@ -42,7 +42,7 @@ function exibirDataAtualizada() {
 function atualizarData() {
     setInterval(() => {
         let data = new Date();
-        data.setSeconds(data.getSeconds() + 19); // Ajuste de segundos
+        data.setSeconds(data.getSeconds() + 24); // Ajuste de segundos
         let horas = data.getHours();
         let minutos = data.getMinutes();
         let segundos = data.getSeconds();
