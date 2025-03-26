@@ -4,7 +4,7 @@ function atualizarRelogio(id, offset) {
         let rel = document.getElementById(id);
         let data = new Date();
         data.setUTCHours(data.getUTCHours() - 0 + offset); // UTC-3 para Brasília como referência
-        data.setSeconds(data.getSeconds() + 25); // Adiciona 19 segundos
+        data.setSeconds(data.getSeconds() + 25); // Adiciona 25 segundos
         let h = data.getHours();
         let m = data.getMinutes();
         let s = data.getSeconds();
