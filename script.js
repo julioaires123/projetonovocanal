@@ -23,7 +23,7 @@ atualizarRelogio('relogio2', 1);  // Fernando de Noronha (UTC-2)
 atualizarRelogio('relogio3', -1); // Amazonas (UTC-4)
 atualizarRelogio('relogio4', -2); // Acre (UTC-5)
 
-// Exibição da data
+// Exibição da data atualizada
 function exibirDataAtualizada() {
     let meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     let semanas = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
@@ -38,17 +38,18 @@ function exibirDataAtualizada() {
     document.getElementById("date").innerHTML = `${semanas[diasem]}, ${dia} de ${meses[mes]} de ${ano}`;
 }
 
-// Atualiza a data à meia-noite seguindo o relógio de Brasília
+// Atualiza a data à meia-noite do horário de Brasília (UTC-3)
 function atualizarData() {
     setInterval(() => {
-        let data = new Date();
-        data.setSeconds(data.getSeconds() + 25); // Ajuste de segundos
-        let horas = data.getHours();
-        let minutos = data.getMinutes();
-        let segundos = data.getSeconds();
+        let dataBrasilia = new Date();
+        dataBrasilia.setUTCHours(dataBrasilia.getUTCHours() - 3); // Ajuste para o fuso horário de Brasília (UTC-3)
+        let horas = dataBrasilia.getHours();
+        let minutos = dataBrasilia.getMinutes();
+        let segundos = dataBrasilia.getSeconds();
 
+        // Verifica se o horário de Brasília chegou a 00:00:00
         if (horas === 0 && minutos === 0 && segundos === 0) {
-            exibirDataAtualizada();
+            exibirDataAtualizada(); // Atualiza a data no momento exato
         }
     }, 1000);
 }
