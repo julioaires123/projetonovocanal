@@ -3,8 +3,9 @@ function atualizarRelogio(id, offset) {
     setInterval(() => {
         let rel = document.getElementById(id);
         let data = new Date();
-        data.setUTCHours(data.getUTCHours() - 0 + offset); // UTC-3 para Brasília como referência
+        data.setUTCHours(data.getUTCHours() + offset); // Ajuste para o fuso horário correto
         data.setSeconds(data.getSeconds() + 25); // Adiciona 25 segundos
+        
         let h = data.getHours();
         let m = data.getMinutes();
         let s = data.getSeconds();
@@ -18,10 +19,10 @@ function atualizarRelogio(id, offset) {
 }
 
 // Inicializa os relógios
-atualizarRelogio('relogio01', 0); // Brasília (UTC-3)
-atualizarRelogio('relogio2', 1);  // Fernando de Noronha (UTC-2)
-atualizarRelogio('relogio3', -1); // Amazonas (UTC-4)
-atualizarRelogio('relogio4', -2); // Acre (UTC-5)
+atualizarRelogio('relogio01', -3); // Brasília (UTC-3)
+atualizarRelogio('relogio2', -2);  // Fernando de Noronha (UTC-2)
+atualizarRelogio('relogio3', -4);  // Amazonas (UTC-4)
+atualizarRelogio('relogio4', -5);  // Acre (UTC-5)
 
 // Exibição da data atualizada
 function exibirDataAtualizada() {
@@ -29,7 +30,7 @@ function exibirDataAtualizada() {
     let semanas = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
     
     let data = new Date();
-    data.setSeconds(data.getSeconds() + 25); // Ajuste de segundos
+    data.setUTCHours(data.getUTCHours() - 3); // Ajuste para o horário de Brasília
     let diasem = data.getDay();
     let dia = data.getDate();
     let mes = data.getMonth();
@@ -38,18 +39,21 @@ function exibirDataAtualizada() {
     document.getElementById("date").innerHTML = `${semanas[diasem]}, ${dia} de ${meses[mes]} de ${ano}`;
 }
 
-// Atualiza a data à meia-noite do horário de Brasília (UTC-3)
+// Atualiza a data quando o dia muda no horário de Brasília
 function atualizarData() {
-    setInterval(() => {
-        let dataBrasilia = new Date();
-        dataBrasilia.setUTCHours(dataBrasilia.getUTCHours() - 3); // Ajuste para o fuso horário de Brasília (UTC-3)
-        let horas = dataBrasilia.getHours();
-        let minutos = dataBrasilia.getMinutes();
-        let segundos = dataBrasilia.getSeconds();
+    let dataBrasiliaAnterior = new Date();
+    dataBrasiliaAnterior.setUTCHours(dataBrasiliaAnterior.getUTCHours() - 3);
+    let diaAnterior = dataBrasiliaAnterior.getDate();
 
-        // Verifica se o horário de Brasília chegou a 00:00:00
-        if (horas === 0 && minutos === 0 && segundos === 0) {
-            exibirDataAtualizada(); // Atualiza a data no momento exato
+    setInterval(() => {
+        let dataBrasiliaAtual = new Date();
+        dataBrasiliaAtual.setUTCHours(dataBrasiliaAtual.getUTCHours() - 3);
+        let diaAtual = dataBrasiliaAtual.getDate();
+
+        // Se o dia mudou, atualiza a data na interface
+        if (diaAtual !== diaAnterior) {
+            exibirDataAtualizada();
+            diaAnterior = diaAtual;
         }
     }, 1000);
 }
