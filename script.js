@@ -3,7 +3,7 @@ function atualizarRelogio(id, offset) {
     setInterval(() => {
         let rel = document.getElementById(id);
         let data = new Date();
-        data.setUTCMinutes(data.getUTCMinutes() + (offset * 60)); // Ajusta o fuso corretamente
+        data.setUTCHours(data.getUTCHours() + offset); // Ajusta corretamente para o fuso horário
 
         let h = data.getHours();
         let m = data.getMinutes();
@@ -29,7 +29,7 @@ function exibirDataAtualizada() {
     let semanas = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
     
     let data = new Date();
-    data.setUTCMinutes(data.getUTCMinutes() + (-3 * 60)); // Ajuste para Brasília
+    data.setUTCHours(data.getUTCHours() + (-3)); // Ajusta para Brasília
     let diasem = data.getDay();
     let dia = data.getDate();
     let mes = data.getMonth();
@@ -41,12 +41,12 @@ function exibirDataAtualizada() {
 // Atualiza a data quando o dia muda no horário de Brasília
 function atualizarData() {
     let dataBrasiliaAnterior = new Date();
-    dataBrasiliaAnterior.setUTCMinutes(dataBrasiliaAnterior.getUTCMinutes() + (-3 * 60));
+    dataBrasiliaAnterior.setUTCHours(dataBrasiliaAnterior.getUTCHours() + (-3));
     let diaAnterior = dataBrasiliaAnterior.getDate();
 
     setInterval(() => {
         let dataBrasiliaAtual = new Date();
-        dataBrasiliaAtual.setUTCMinutes(dataBrasiliaAtual.getUTCMinutes() + (-3 * 60));
+        dataBrasiliaAtual.setUTCHours(dataBrasiliaAtual.getUTCHours() + (-3));
         let diaAtual = dataBrasiliaAtual.getDate();
 
         // Se o dia mudou, atualiza a data na interface
