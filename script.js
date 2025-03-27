@@ -18,10 +18,10 @@ function atualizarRelogio(id, offset) {
 }
 
 // Inicializa os relógios com 3 horas a mais
-atualizarRelogio('relogio01', -3); // Brasília (UTC-3) → Mostrará UTC 0
-atualizarRelogio('relogio2', -2);  // Fernando de Noronha (UTC-2) → Mostrará UTC+1
-atualizarRelogio('relogio3', -4);  // Amazonas (UTC-4) → Mostrará UTC-1
-atualizarRelogio('relogio4', -5);  // Acre (UTC-5) → Mostrará UTC-2
+atualizarRelogio('relogio01', -3); // Brasília (UTC-3) → Agora UTC 0
+atualizarRelogio('relogio2', -2);  // Fernando de Noronha (UTC-2) → Agora UTC+1
+atualizarRelogio('relogio3', -4);  // Amazonas (UTC-4) → Agora UTC-1
+atualizarRelogio('relogio4', -5);  // Acre (UTC-5) → Agora UTC-2
 
 // Exibição da data atualizada
 function exibirDataAtualizada() {
@@ -30,6 +30,7 @@ function exibirDataAtualizada() {
     
     let data = new Date();
     data.setUTCHours(data.getUTCHours() + (-3) + 3); // Ajusta para Brasília e soma 3 horas
+
     let diasem = data.getDay();
     let dia = data.getDate();
     let mes = data.getMonth();
@@ -38,21 +39,19 @@ function exibirDataAtualizada() {
     document.getElementById("date").innerHTML = `${semanas[diasem]}, ${dia} de ${meses[mes]} de ${ano}`;
 }
 
-// Atualiza a data quando o dia muda no horário de Brasília
+// Atualiza a data automaticamente quando o dia mudar no novo horário ajustado
 function atualizarData() {
-    let dataBrasiliaAnterior = new Date();
-    dataBrasiliaAnterior.setUTCHours(dataBrasiliaAnterior.getUTCHours() + (-3) + 3);
-    let diaAnterior = dataBrasiliaAnterior.getDate();
-
     setInterval(() => {
-        let dataBrasiliaAtual = new Date();
-        dataBrasiliaAtual.setUTCHours(dataBrasiliaAtual.getUTCHours() + (-3) + 3);
-        let diaAtual = dataBrasiliaAtual.getDate();
+        let dataBrasilia = new Date();
+        dataBrasilia.setUTCHours(dataBrasilia.getUTCHours() + (-3) + 3); // Ajusta para Brasília e soma 3 horas
 
-        // Se o dia mudou, atualiza a data na interface
-        if (diaAtual !== diaAnterior) {
+        let horas = dataBrasilia.getHours();
+        let minutos = dataBrasilia.getMinutes();
+        let segundos = dataBrasilia.getSeconds();
+
+        // Se o horário de Brasília atingir 00:00:00, atualiza a data
+        if (horas === 0 && minutos === 0 && segundos === 0) {
             exibirDataAtualizada();
-            diaAnterior = diaAtual;
         }
     }, 1000);
 }
