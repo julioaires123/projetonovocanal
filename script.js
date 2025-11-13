@@ -2,7 +2,7 @@ function atualizarRelogio(id, offset) {
     setInterval(() => {
         let rel = document.getElementById(id);
         let data = new Date();
-        data.setUTCSeconds(data.getUTCSeconds() + 15); // Adiciona 25 segundos
+        data.setUTCSeconds(data.getUTCSeconds() + 03); // Adiciona 25 segundos
         data.setUTCHours(data.getUTCHours() + offset + 3); // Ajusta o fuso horário
 
         let h = data.getHours();
@@ -29,7 +29,7 @@ function exibirDataAtualizada() {
     let semanas = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
     
     let data = new Date();
-    data.setUTCSeconds(data.getUTCSeconds() + 15); // Adiciona 25 segundos
+    data.setUTCSeconds(data.getUTCSeconds() + 03); // Adiciona 25 segundos
     data.setUTCHours(data.getUTCHours() + (-3) + 3); // Ajusta para Brasília
 
     let diasem = data.getDay();
@@ -44,7 +44,7 @@ function exibirDataAtualizada() {
 function atualizarData() {
     setInterval(() => {
         let dataBrasilia = new Date();
-        dataBrasilia.setUTCSeconds(dataBrasilia.getUTCSeconds() + 15); // Adiciona 25 segundos
+        dataBrasilia.setUTCSeconds(dataBrasilia.getUTCSeconds() + 03); // Adiciona 25 segundos
         dataBrasilia.setUTCHours(dataBrasilia.getUTCHours() + (-3) + 3); // Ajusta para Brasília
 
         let horas = dataBrasilia.getHours();
@@ -61,6 +61,7 @@ function atualizarData() {
 // Inicializa a exibição da data e atualização automática
 exibirDataAtualizada();
 atualizarData();
+
 
 
 
