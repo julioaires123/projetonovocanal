@@ -28,8 +28,9 @@ h1 {
 
 p#relogio01 {
     position: fixed;
-    right: -0.15%;
     top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     font-size: 23.3rem;
     color: #0044ff;
