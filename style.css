@@ -28,7 +28,7 @@ h1 {
 
 p#relogio01 {
     position: fixed;
-    top: 10%;
+    top: 7%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
