@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-
 /*horário de Brasília principal*/
 
 body {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -19,23 +19,21 @@ h1 {
     position: fixed;
     top: 1%;
     right: 32%;
-    justify-content: space-around;
     font-size: 3rem;
     color: #0044ff;
     font-family: 'arial';
 }
 
-
 p#relogio01 {
     position: fixed;
-    right: -0.15%;
-    top: 2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     font-size: 21.8rem;
     color: #0044ff;
     font-family: 'arial';
 }
-
 
 /*horário do fernando de noronha*/
 
