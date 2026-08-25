@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-    position: fixed;
+    position: center;
     top: 1%;
     right: 32%;
     justify-content: space-around;
@@ -27,7 +27,7 @@ h1 {
 
 
 p#relogio01 {
-    position: fixed;
+    position: center;
     right: -0.15%;
     top: 2%;
     text-align: center;
