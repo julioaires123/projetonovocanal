@@ -42,7 +42,7 @@ p#relogio01 {
 
 #relogio2 {
     position: fixed;
-    top: 60%;
+    top: 65%;
     right: 70%;
     font-size: 6rem;
     color: #0044ff;
@@ -51,7 +51,7 @@ p#relogio01 {
 
 p.fn {
     position: fixed;
-    top: 58%;
+    top: 63%;
     right: 72%;
     justify-content: space-around;
     font-size: 1.6rem;
@@ -64,7 +64,7 @@ p.fn {
 
 #relogio3 {
     position: fixed;
-    top: 60%;
+    top: 65%;
     right: 37%;
     justify-content: space-around;
     font-size: 6rem;
@@ -74,7 +74,7 @@ p.fn {
 
 p.am {
     position: fixed;
-    top: 58%;
+    top: 63%;
     right: 43.8%;
     justify-content: space-around;
     font-size: 1.6rem;
@@ -88,7 +88,7 @@ p.am {
 
 #relogio4 {
     position: fixed;
-    top: 60%;
+    top: 65%;
     right: 5%;
     font-size: 6rem;
     color: #0044ff;
@@ -97,7 +97,7 @@ p.am {
 
 p.ac {
     position: fixed;
-    top: 58%;
+    top: 63%;
     right: 15%;
     justify-content: space-around;
     font-size: 1.6rem;
