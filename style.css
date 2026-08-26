@@ -42,7 +42,7 @@ p#relogio01 {
 
 #relogio2 {
     position: fixed;
-    top: 80%;
+    top: 70%;
     right: 70%;
     font-size: 6rem;
     color: #0044ff;
@@ -51,7 +51,7 @@ p#relogio01 {
 
 p.fn {
     position: fixed;
-    top: 78%;
+    top: 68%;
     right: 72%;
     justify-content: space-around;
     font-size: 1.6rem;
