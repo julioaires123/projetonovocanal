@@ -64,7 +64,7 @@ p.fn {
 
 #relogio3 {
     position: fixed;
-    top: 80%;
+    top: 60%;
     right: 37%;
     justify-content: space-around;
     font-size: 6rem;
@@ -74,7 +74,7 @@ p.fn {
 
 p.am {
     position: fixed;
-    top: 78%;
+    top: 58%;
     right: 43.8%;
     justify-content: space-around;
     font-size: 1.6rem;
@@ -88,7 +88,7 @@ p.am {
 
 #relogio4 {
     position: fixed;
-    top: 80%;
+    top: 60%;
     right: 5%;
     font-size: 6rem;
     color: #0044ff;
@@ -97,7 +97,7 @@ p.am {
 
 p.ac {
     position: fixed;
-    top: 78%;
+    top: 58%;
     right: 15%;
     justify-content: space-around;
     font-size: 1.6rem;
