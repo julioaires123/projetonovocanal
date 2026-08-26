@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-
-/*horário de Brasília principal*/
-
+/* horário de Brasília principal */
 body {
     justify-content: center;
     align-items: center;
@@ -15,9 +13,9 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
-h1 {                     /* O NOME HORARIO DE BRASILIA QUE FICA NO HORARIO */
+h1 {
     position: fixed;
-    top: 5%;
+    top: 1%;
     right: 32%;
     justify-content: space-around;
     font-size: 3rem;
@@ -25,25 +23,21 @@ h1 {                     /* O NOME HORARIO DE BRASILIA QUE FICA NO HORARIO */
     font-family: 'arial';
 }
 
-
 p#relogio01 {
     position: fixed;
-    top: 7%;
-    left: 50%;
-    transform: translateX(-50%);
+    right: -0.15%;
+    top: 2%;
     text-align: center;
-    font-size: 22.0rem;
+    font-size: 24.3rem;
     color: #0044ff;
     font-family: 'arial';
 }
 
-
-/*horário do fernando de noronha*/
-
+/* horário de Fernando de Noronha */
 #relogio2 {
     position: fixed;
-    top: 65%;
-    right: 70%;
+    top: 80%;
+    right: 74.8%;
     font-size: 6rem;
     color: #0044ff;
     font-family: 'arial';
@@ -51,20 +45,18 @@ p#relogio01 {
 
 p.fn {
     position: fixed;
-    top: 63%;
-    right: 72%;
+    top: 78%;
+    right: 76%;
     justify-content: space-around;
     font-size: 1.6rem;
     color: #0044ff;
     font-family: 'arial';
 }
 
-
-/*horário do amazonas*/
-
+/* horário do Amazonas */
 #relogio3 {
     position: fixed;
-    top: 65%;
+    top: 80%;
     right: 37%;
     justify-content: space-around;
     font-size: 6rem;
@@ -74,7 +66,7 @@ p.fn {
 
 p.am {
     position: fixed;
-    top: 63%;
+    top: 78%;
     right: 43.8%;
     justify-content: space-around;
     font-size: 1.6rem;
@@ -82,14 +74,11 @@ p.am {
     font-family: 'arial';
 }
 
-
-
-/*horário do acre*/
-
+/* horário do Acre */
 #relogio4 {
     position: fixed;
-    top: 65%;
-    right: 5%;
+    top: 80%;
+    right: 0%;
     font-size: 6rem;
     color: #0044ff;
     font-family: 'arial';
@@ -97,29 +86,25 @@ p.am {
 
 p.ac {
     position: fixed;
-    top: 63%;
-    right: 15%;
+    top: 78%;
+    right: 10%;
     justify-content: space-around;
     font-size: 1.6rem;
     color: #0044ff;
     font-family: 'arial';
 }
 
-
-/*ok teste dia mes e ano*/
-section {
+/* dia, mês e ano — regra única, controlada por position: fixed */
+#date {
+    position: fixed;
+    top: 45%; /* diminua para subir, aumente para descer */
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    padding-top: 25%;
     font-size: 4.8rem;
     color: #0044ff;
     font-family: 'arial';
-}
-section {
-    text-align: center;
-    padding-top: 235px; /* Ou outro valor adequado */
-    font-size: 4.8rem;
-    color: #0044ff;
-    font-family: 'arial';
+    margin: 0;
 }
 
 p.sr {
@@ -131,6 +116,7 @@ p.sr {
     color: #0044ff;
     font-family: 'arial';
 }
+
 a.sr {
     position: fixed;
     top: 95%;
