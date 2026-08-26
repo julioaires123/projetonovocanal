@@ -70,7 +70,7 @@ h1 {
 .clocks-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 100%;                  /* Diminua (%) para juntar mais ao centro */
+    width:90%;                  /* Diminua (%) para juntar mais ao centro */
     max-width: 3600px;
     gap: 2vw;                     /* Espaço entre as colunas */
     text-align: center;
