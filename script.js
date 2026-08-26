@@ -1,5 +1,12 @@
+// DEFINE O DELAY DA LIVE EM SEGUNDOS (ex: 15 segundos de atraso = 15)
+const DELAY_LIVES_SEGUNDOS = 15; 
+
 function obterHoraFormatada(timeZone) {
     const agora = new Date();
+    
+    // Adiciona os segundos de compensação
+    agora.setSeconds(agora.getSeconds() + DELAY_LIVES_SEGUNDOS);
+
     const opcoes = {
         timeZone: timeZone,
         hour: '2-digit',
@@ -19,6 +26,10 @@ function atualizarRelogios() {
 
 function atualizarData() {
     const agora = new Date();
+    
+    // Aplica o mesmo delay na data para garantir que a virada de dia acompanhe a live
+    agora.setSeconds(agora.getSeconds() + DELAY_LIVES_SEGUNDOS);
+
     const opcoes = { 
         weekday: 'long', 
         year: 'numeric', 
@@ -38,7 +49,7 @@ function iniciar() {
     atualizarRelogios();
     
     setInterval(atualizarRelogios, 1000);
-    setInterval(atualizarData, 60000);
+    setInterval(atualizarData, 1000); // Atualiza a cada segundo para trocar o dia no momento exato
 }
 
 document.addEventListener('DOMContentLoaded', iniciar);
