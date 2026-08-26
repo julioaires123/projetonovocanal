@@ -2,58 +2,58 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif !important;
 }
 
 body {
     background-color: #000000;
     color: #0044ff;
-    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
 
 .container {
     width: 100vw;
     height: 100vh;
-    padding: 3vh 2vw;
+    padding: 2vh 2vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-/* --- SEÇÃO PRINCIPAL (BRASÍLIA -> RELÓGIO -> DATA) --- */
-.header-main {
-    text-align: center;
+/* HORÁRIO PRINCIPAL E DATA */
+.bloco-principal {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     width: 100%;
 }
 
 h1 {
-    font-size: clamp(1.8rem, 3.2vw, 4.2rem);
+    font-size: clamp(1.8rem, 3vw, 4rem);
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: #0044ff;
 }
 
 .clock-main {
-    font-size: clamp(6rem, 18vw, 24rem);
+    font-size: clamp(6rem, 16vw, 22rem);
     font-weight: bold;
-    line-height: 0.95;
+    line-height: 0.9;
     margin: 1vh 0;
+    color: #0044ff;
 }
 
 .date-display {
-    font-size: clamp(1.8rem, 3.8vw, 5rem);
+    font-size: clamp(1.8rem, 3.5vw, 4.8rem);
     font-weight: normal;
-    margin-top: 0.5rem;
+    color: #0044ff;
 }
 
-/* --- GRID DOS FUSOS HORÁRIOS SECUNDÁRIOS --- */
+/* FUSOS SECUNDÁRIOS */
 .clocks-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -61,20 +61,21 @@ h1 {
     max-width: 3600px;
     gap: 2vw;
     text-align: center;
-    margin-top: 2vh;
 }
 
 .clock-card h2 {
-    font-size: clamp(1rem, 1.6vw, 2.2rem);
+    font-size: clamp(1rem, 1.5vw, 2.2rem);
     margin-bottom: 0.3rem;
+    color: #0044ff;
 }
 
 .clock-sub {
-    font-size: clamp(2.5rem, 5.5vw, 8rem);
+    font-size: clamp(2.5rem, 5vw, 7.5rem);
     font-weight: bold;
+    color: #0044ff;
 }
 
-/* --- RODAPÉ --- */
+/* RODAPÉ */
 .footer {
     text-align: center;
     padding-bottom: 1vh;
