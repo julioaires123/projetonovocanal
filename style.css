@@ -2,91 +2,127 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif !important;
 }
 
+/* horário de Brasília principal */
 body {
-    background-color: #000000;
-    color: #0044ff;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-.container {
-    width: 100vw;
-    height: 100vh;
-    padding: 2vh 2vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* HORÁRIO PRINCIPAL E DATA */
-.bloco-principal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    width: 100%;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
 }
 
 h1 {
-    font-size: clamp(1.8rem, 3vw, 4rem);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    position: fixed;
+    top: 1%;
+    right: 32%;
+    justify-content: space-around;
+    font-size: 3rem;
     color: #0044ff;
+    font-family: 'arial';
 }
 
-.clock-main {
-    font-size: clamp(6rem, 16vw, 22rem);
-    font-weight: bold;
-    line-height: 0.9;
-    margin: 1vh 0;
-    color: #0044ff;
-}
-
-.date-display {
-    font-size: clamp(1.8rem, 3.5vw, 4.8rem);
-    font-weight: normal;
-    color: #0044ff;
-}
-
-/* FUSOS SECUNDÁRIOS */
-.clocks-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    max-width: 3600px;
-    gap: 2vw;
+p#relogio01 {
+    position: fixed;
+    right: -0.15%;
+    top: 2%;
     text-align: center;
-}
-
-.clock-card h2 {
-    font-size: clamp(1rem, 1.5vw, 2.2rem);
-    margin-bottom: 0.3rem;
+    font-size: 24.3rem;
     color: #0044ff;
+    font-family: 'arial';
 }
 
-.clock-sub {
-    font-size: clamp(2.5rem, 5vw, 7.5rem);
-    font-weight: bold;
+/* horário de Fernando de Noronha */
+#relogio2 {
+    position: fixed;
+    top: 80%;
+    right: 74.8%;
+    font-size: 6rem;
     color: #0044ff;
+    font-family: 'arial';
 }
 
-/* RODAPÉ */
-.footer {
+p.fn {
+    position: fixed;
+    top: 78%;
+    right: 76%;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    color: #0044ff;
+    font-family: 'arial';
+}
+
+/* horário do Amazonas */
+#relogio3 {
+    position: fixed;
+    top: 80%;
+    right: 37%;
+    justify-content: space-around;
+    font-size: 6rem;
+    color: #0044ff;
+    font-family: 'arial';
+}
+
+p.am {
+    position: fixed;
+    top: 78%;
+    right: 43.8%;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    color: #0044ff;
+    font-family: 'arial';
+}
+
+/* horário do Acre */
+#relogio4 {
+    position: fixed;
+    top: 80%;
+    right: 0%;
+    font-size: 6rem;
+    color: #0044ff;
+    font-family: 'arial';
+}
+
+p.ac {
+    position: fixed;
+    top: 78%;
+    right: 10%;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    color: #0044ff;
+    font-family: 'arial';
+}
+
+/* dia, mês e ano — regra única, controlada por position: fixed */
+#date {
+    position: fixed;
+    top: 45%; /* diminua para subir, aumente para descer */
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    padding-bottom: 1vh;
-}
-
-.footer p, .footer a {
-    font-size: clamp(0.9rem, 1.2vw, 1.8rem);
+    font-size: 4.8rem;
     color: #0044ff;
-    text-decoration: none;
+    font-family: 'arial';
+    margin: 0;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+p.sr {
+    position: fixed;
+    top: 95%;
+    right: 43.8%;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    color: #0044ff;
+    font-family: 'arial';
+}
+
+a.sr {
+    position: fixed;
+    top: 95%;
+    right: 43.8%;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    color: #0044ff;
+    font-family: 'arial';
 }
