@@ -15,9 +15,9 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
-h1 {
+h1 {                     /* O NOME HORARIO DE BRASILIA QUE FICA NO HORARIO */
     position: fixed;
-    top: 10%;
+    top: 8%;
     right: 32%;
     justify-content: space-around;
     font-size: 3rem;
