@@ -14,7 +14,94 @@ body {
 
 .container {
     width: 100vw;
+    height: 100vh;* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #0044ff;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
     height: 100vh;
+    padding: 2vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- BLOCO PRINCIPAL (BRASÍLIA + RELÓGIO + DATA) --- */
+.bloco-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 3vw, 4rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.clock-main {
+    font-size: clamp(6rem, 16vw, 22rem);
+    font-weight: bold;
+    line-height: 0.9;
+    margin: 1vh 0;
+}
+
+.date-display {
+    font-size: clamp(1.8rem, 3.5vw, 4.8rem);
+    font-weight: bold;
+}
+
+/* --- FUSOS SECUNDÁRIOS (NORONHA, AMAZONAS, ACRE) --- */
+.clocks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;                  /* Diminua (%) para juntar mais ao centro */
+    max-width: 3600px;
+    gap: 2vw;                     /* Espaço entre as colunas */
+    text-align: center;
+    margin-top: 0vh;              /* Mude para negativo (ex: -5vh) para SUBIR os relógios */
+}
+
+.clock-card h2 {
+    font-size: clamp(1rem, 1.5vw, 2.2rem);  /* Tamanho dos títulos (NORONHA, AM, ACRE) */
+    margin-bottom: 0.3rem;
+}
+
+.clock-sub {
+    font-size: clamp(2.5rem, 5vw, 7.5rem);  /* Tamanho dos números dos relógios secundários */
+    font-weight: bold;
+}
+
+/* --- RODAPÉ --- */
+.footer {
+    text-align: center;
+    padding-bottom: 1vh;
+}
+
+.footer p, .footer a {
+    font-size: clamp(0.9rem, 1.2vw, 1.8rem);
+    color: #0044ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
     padding: 2vh 2vw;
     display: flex;
     flex-direction: column;
