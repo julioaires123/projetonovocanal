@@ -74,7 +74,7 @@ h1 {
     max-width: 3600px;
     gap: 2vw;                     /* Espaço entre as colunas */
     text-align: center;
-    margin-top: -10vh;              /* Mude para negativo (ex: -5vh) para SUBIR os relógios */
+    margin-top: -20vh;              /* Mude para negativo (ex: -5vh) para SUBIR os relógios */
 }
 
 .clock-card h2 {
