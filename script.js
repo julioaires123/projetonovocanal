@@ -1,5 +1,5 @@
 // DEFINE O DELAY DA LIVE EM SEGUNDOS (ex: 15 segundos de atraso = 15)
-const DELAY_LIVES_SEGUNDOS = 18; 
+const DELAY_LIVES_SEGUNDOS = 15; 
 
 function obterHoraFormatada(timeZone) {
     const agora = new Date();
